@@ -1,0 +1,26 @@
+<robot name = "nyku">
+
+    <link name = "base_link"/>
+    <link name = "neck_link_1"/>
+    <link name = "neck_link_2"/>
+    <link name = "neck_link_3"/>
+
+    <joint name = "yaw" type = "revolute">
+        <parent link = "base_link"/>
+        <child link = "neck_link_1"/>
+        <limit effort="100" velocity="10" lower="-3.14" upper ="3.14"/>
+    </joint>
+
+    <joint name = "pitch" type = "revolute">
+        <parent link = "neck_link_1"/>
+        <child link = "neck_link_2"/>
+        <limit effort="100" velocity="10" lower="-2.0" upper ="2.0"/>
+    </joint>
+
+    <joint name = "roll" type = "revolute">
+        <parent link = "neck_link_2"/>
+        <child link = "neck_link_3"/>
+        <limit effort="100" velocity="10" lower="-2.0" upper ="2.0"/>
+    </joint>
+
+</robot>
